@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointment Scheduling - HealthCare Plus</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>HealthCare<span>Plus</span></h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="appointments.html" class="active">Appointments</a></li>
+            <li><a href="billing.html">Billing</a></li>
+            <li><a href="login.html" class="btn-login">Login / Sign Up</a></li>
+          </ul>
+        </nav>
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <section class="page-header">
+      <div class="container">
+        <h2>Schedule Your Appointment</h2>
+        <p>
+          Book a visit with our healthcare professionals quickly and easily.
+        </p>
+      </div>
+    </section>
+
+    <section class="appointment-section">
+      <div class="container">
+        <div class="appointment-container">
+          <div class="appointment-filters">
+            <h3>Find a Doctor</h3>
+            <form class="filter-form">
+              <div class="form-group">
+                <label for="specialty">Specialty</label>
+                <select id="specialty" name="specialty">
+                  <option value="">All Specialties</option>
+                  <option value="cardiology">Cardiology</option>
+                  <option value="dermatology">Dermatology</option>
+                  <option value="neurology">Neurology</option>
+                  <option value="orthopedics">Orthopedics</option>
+                  <option value="pediatrics">Pediatrics</option>
+                  <option value="psychiatry">Psychiatry</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" />
+              </div>
+              <div class="form-group">
+                <label for="appointment-type">Appointment Type</label>
+                <select id="appointment-type" name="appointment-type">
+                  <option value="in-person">In-Person</option>
+                  <option value="virtual">Virtual</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+          </div>
+
+          <div class="doctors-list">
+            <h3>Available Doctors</h3>
+            <div class="doctor-card">
+              <div class="doctor-image">
+                <img
+                  src="https://media.istockphoto.com/id/479378798/photo/portrait-of-female-doctor.jpg?s=612x612&w=0&k=20&c=P-W8KSJBYhYj2RSx1Zhff6FCGvtRDC3AAzox8deMmew="
+                  alt="Dr. Jennifer Wilson"
+                />
+              </div>
+              <div class="doctor-info">
+                <h4>Dr. Jennifer Wilson</h4>
+                <p class="specialty">Cardiology</p>
+                <p class="rating">⭐⭐⭐⭐⭐ (4.9)</p>
+                <p class="availability">Next Available: Today at 2:00 PM</p>
+                <button class="btn btn-secondary book-btn">
+                  Book Appointment
+                </button>
+              </div>
+            </div>
+            <div class="doctor-card">
+              <div class="doctor-image">
+                <img
+                  src="https://www.felixhospital.com/sites/default/files/2024-08/dr-dk-gupta.webp"
+                  alt="Dr. Michael Chen"
+                />
+              </div>
+              <div class="doctor-info">
+                <h4>Dr. Suraj tripathi</h4>
+                <p class="specialty">Dermatology</p>
+                <p class="rating">⭐⭐⭐⭐⭐ (4.8)</p>
+                <p class="availability">Next Available: Tomorrow at 10:00 AM</p>
+                <button class="btn btn-secondary book-btn">
+                  Book Appointment
+                </button>
+              </div>
+            </div>
+            <div class="doctor-card">
+              <div class="doctor-image">
+                <img
+                  src="https://i.pinimg.com/736x/7e/91/b7/7e91b721691322422919eec7dc039618.jpg"
+                  alt="Dr. Sarah Johnson"
+                />
+              </div>
+              <div class="doctor-info">
+                <h4>Dr. Sarah Johnson</h4>
+                <p class="specialty">Pediatrics</p>
+                <p class="rating">⭐⭐⭐⭐⭐ (4.9)</p>
+                <p class="availability">Next Available: Today at 3:30 PM</p>
+                <button class="btn btn-secondary book-btn">
+                  Book Appointment
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="appointment-modal" id="appointmentModal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>Book Your Appointment</h3>
+        <form id="appointment-form">
+          <div class="form-group">
+            <label for="selected-doctor">Doctor</label>
+            <input
+              type="text"
+              id="selected-doctor"
+              readonly
+              value="Dr. Jennifer Wilson - Cardiology"
+            />
+          </div>
+          <div class="form-group">
+            <label for="appointment-date">Date</label>
+            <input type="date" id="appointment-date" required />
+          </div>
+          <div class="form-group">
+            <label for="appointment-time">Time</label>
+            <select id="appointment-time" required>
+              <option value="">Select a time</option>
+              <option value="9:00">9:00 AM</option>
+              <option value="9:30">9:30 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="10:30">10:30 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="11:30">11:30 AM</option>
+              <option value="1:00">1:00 PM</option>
+              <option value="1:30">1:30 PM</option>
+              <option value="2:00">2:00 PM</option>
+              <option value="2:30">2:30 PM</option>
+              <option value="3:00">3:00 PM</option>
+              <option value="3:30">3:30 PM</option>
+              <option value="4:00">4:00 PM</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="reason">Reason for Visit</label>
+            <textarea id="reason" rows="3" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="appointment-type-select">Appointment Type</label>
+            <select id="appointment-type-select" required>
+              <option value="in-person">In-Person</option>
+              <option value="virtual">Virtual</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="insurance">Insurance Information</label>
+            <input
+              type="text"
+              id="insurance"
+              placeholder="Insurance Provider"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Confirm Appointment
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section class="upcoming-appointments">
+      <div class="container">
+        <h3>Your Upcoming Appointments</h3>
+        <p class="login-prompt">
+          Please <a href="login.html">login</a> to view your upcoming
+          appointments.
+        </p>
+        <div class="appointments-list" style="display: none">
+          <!-- This will be populated when user is logged in -->
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h2>HealthCare<span>Plus</span></h2>
+            <p>Your Digital Health Partner</p>
+          </div>
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="appointments.html">Appointments</a></li>
+              <li><a href="billing.html">Billing</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: support@healthcareplus.com</p>
+            <p>Phone: (555) 123-4567</p>
+            <p>Hours: Mon-Fri, 8am-8pm</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 HealthCare Plus. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
