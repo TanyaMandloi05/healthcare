@@ -1,320 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Billing - HealthCare Plus</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <div class="logo">
-                <h1>HealthCare<span>Plus</span></h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="appointments.html">Appointments</a></li>
-                    <li><a href="billing.html" class="active">Billing</a></li>
-                    <li><a href="login.html" class="btn-login">Login / Sign Up</a></li>
-                </ul>
-            </nav>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="container">
+        <div class="logo">
+          <h1>HealthCare<span>Plus</span></h1>
         </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="appointments.html">Appointments</a></li>
+            <li><a href="billing.html" class="active">Billing</a></li>
+            <li><a href="login.html" class="btn-login">Login / Sign Up</a></li>
+          </ul>
+        </nav>
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </header>
 
     <section class="page-header">
-        <div class="container">
-            <h2>Billing & Payments</h2>
-            <p>View and manage your healthcare bills in one place.</p>
-        </div>
+      <div class="container">
+        <h2>Billing & Payments</h2>
+        <p>View and manage your healthcare bills in one place.</p>
+      </div>
     </section>
 
     <section class="billing-section">
-        <div class="container">
-            <div class="login-required">
-                <h3>Please log in to view your billing information</h3>
-                <p>Access your invoices, payment history, and insurance details after logging in.</p>
-                <a href="login.html" class="btn btn-primary">Login Now</a>
-            </div>
-
-            <div class="billing-dashboard" style="display: none;">
-                <!-- This content will be shown when user is logged in -->
-                <div class="billing-summary">
-                    <div class="summary-card">
-                        <h3>Outstanding Balance</h3>
-                        <p class="amount">$245.00</p>
-                        <a href="#" class="btn btn-primary">Pay Now</a>
-                    </div>
-                    <div class="summary-card">
-                        <h3>Last Payment</h3>
-                        <p class="amount">$150.00</p>
-                        <p class="date">April 15, 2025</p>
-                    </div>
-                    <div class="summary-card">
-                        <h3>Insurance Coverage</h3>
-                        <p class="insurance-name">BlueCross HealthPlus</p>
-                        <p class="member-id">Member ID: XXX-XXX-1234</p>
-                    </div>
-                </div>
-
-                <div class="billing-tabs">
-                    <div class="tab-header">
-                        <button class="tab-btn active" data-tab="invoices">Invoices</button>
-                        <button class="tab-btn" data-tab="payment-history">Payment History</button>
-                        <button class="tab-btn" data-tab="insurance">Insurance</button>
-                    </div>
-                    
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="invoices">
-                            <div class="invoice-filters">
-                                <select id="invoice-status">
-                                    <option value="all">All Invoices</option>
-                                    <option value="paid">Paid</option>
-                                    <option value="unpaid">Unpaid</option>
-                                </select>
-                                <input type="date" id="invoice-date" placeholder="Filter by date">
-                            </div>
-                            
-                            <div class="invoices-list">
-                                <div class="invoice-item unpaid">
-                                    <div class="invoice-details">
-                                        <h4>Invoice #INV-2025-0042</h4>
-                                        <p class="invoice-date">May 10, 2025</p>
-                                        <p class="invoice-service">Annual Physical Examination</p>
-                                    </div>
-                                    <div class="invoice-amount">
-                                        <p class="amount">$245.00</p>
-                                        <span class="status unpaid">Unpaid</span>
-                                        <button class="btn btn-sm btn-primary">Pay Now</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="invoice-item paid">
-                                    <div class="invoice-details">
-                                        <h4>Invoice #INV-2025-0036</h4>
-                                        <p class="invoice-date">April 15, 2025</p>
-                                        <p class="invoice-service">Cardiology Consultation</p>
-                                    </div>
-                                    <div class="invoice-amount">
-                                        <p class="amount">$150.00</p>
-                                        <span class="status paid">Paid</span>
-                                        <button class="btn btn-sm btn-secondary">View Receipt</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="invoice-item paid">
-                                    <div class="invoice-details">
-                                        <h4>Invoice #INV-2025-0028</h4>
-                                        <p class="invoice-date">March 22, 2025</p>
-                                        <p class="invoice-service">Laboratory Tests</p>
-                                    </div>
-                                    <div class="invoice-amount">
-                                        <p class="amount">$85.00</p>
-                                        <span class="status paid">Paid</span>
-                                        <button class="btn btn-sm btn-secondary">View Receipt</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="tab-pane" id="payment-history">
-                            <div class="payment-history-list">
-                                <div class="payment-item">
-                                    <div class="payment-details">
-                                        <h4>Payment #PAY-2025-0036</h4>
-                                        <p class="payment-date">April 15, 2025</p>
-                                        <p class="payment-method">Credit Card (ending in 4567)</p>
-                                    </div>
-                                    <div class="payment-amount">
-                                        <p class="amount">$150.00</p>
-                                        <button class="btn btn-sm btn-secondary">View Receipt</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="payment-item">
-                                    <div class="payment-details">
-                                        <h4>Payment #PAY-2025-0028</h4>
-                                        <p class="payment-date">March 22, 2025</p>
-                                        <p class="payment-method">Credit Card (ending in 4567)</p>
-                                    </div>
-                                    <div class="payment-amount">
-                                        <p class="amount">$85.00</p>
-                                        <button class="btn btn-sm btn-secondary">View Receipt</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="payment-item">
-                                    <div class="payment-details">
-                                        <h4>Payment #PAY-2025-0015</h4>
-                                        <p class="payment-date">February 8, 2025</p>
-                                        <p class="payment-method">Insurance</p>
-                                    </div>
-                                    <div class="payment-amount">
-                                        <p class="amount">$320.00</p>
-                                        <button class="btn btn-sm btn-secondary">View Receipt</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="tab-pane" id="insurance">
-                            <div class="insurance-details">
-                                <div class="insurance-card">
-                                    <div class="insurance-logo">
-                                        <img src="/placeholder.svg?height=60&width=120" alt="BlueCross HealthPlus">
-                                    </div>
-                                    <div class="insurance-info">
-                                        <h4>BlueCross HealthPlus</h4>
-                                        <p><strong>Member ID:</strong> XXX-XXX-1234</p>
-                                        <p><strong>Group Number:</strong> GRP-567890</p>
-                                        <p><strong>Plan Type:</strong> PPO</p>
-                                        <p><strong>Effective Date:</strong> January 1, 2025</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="coverage-details">
-                                    <h4>Coverage Details</h4>
-                                    <table class="coverage-table">
-                                        <thead>
-                                            <tr>
-                                                <th>Service Type</th>
-                                                <th>In-Network</th>
-                                                <th>Out-of-Network</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Primary Care Visit</td>
-                                                <td>$25 copay</td>
-                                                <td>30% coinsurance</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Specialist Visit</td>
-                                                <td>$40 copay</td>
-                                                <td>40% coinsurance</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Emergency Room</td>
-                                                <td>$250 copay</td>
-                                                <td>$250 copay</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Urgent Care</td>
-                                                <td>$50 copay</td>
-                                                <td>30% coinsurance</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Hospital Stay</td>
-                                                <td>$300/day, max $1,500</td>
-                                                <td>40% coinsurance</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="login-required">
+          <h3>Please log in to view your billing information</h3>
+          <p>
+            Access your invoices, payment history, and insurance details after
+            logging in.
+          </p>
+          <a href="login.html" class="btn btn-primary">Login Now</a>
         </div>
+
+        <div class="billing-dashboard" style="display: none;">
+          <!-- This content will be shown when user is logged in -->
+          <div class="billing-summary">
+            <div class="summary-card">
+              <h3>Outstanding Balance</h3>
+              <p class="amount">$245.00</p>
+              <a href="#" class="btn btn-primary">Pay Now</a>
+            </div>
+            <div class="summary-card">
+              <h3>Last Payment</h3>
+              <p class="amount">$150.00</p>
+              <p class="date">April 15, 2025</p>
+            </div>
+            <div class="summary-card">
+              <h3>Insurance Coverage</h3>
+              <p class="insurance-name">BlueCross HealthPlus</p>
+              <p class="member-id">Member ID: XXX-XXX-1234</p>
+            </div>
+          </div>
+
+          <div class="billing-tabs">
+            <div class="tab-header">
+              <button class="tab-btn active" data-tab="invoices">
+                Invoices
+              </button>
+              <button class="tab-btn" data-tab="payment-history">
+                Payment History
+              </button>
+              <button class="tab-btn" data-tab="insurance">Insurance</button>
+            </div>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="invoices">
+                <div class="invoice-filters">
+                  <select id="invoice-status">
+                    <option value="all">All Invoices</option>
+                    <option value="paid">Paid</option>
+                    <option value="unpaid">Unpaid</option>
+                  </select>
+                  <input
+                    type="date"
+                    id="invoice-date"
+                    placeholder="Filter by date"
+                  />
+                </div>
+
+                <div class="invoices-list">
+                  <div class="invoice-item unpaid">
+                    <div class="invoice-details">
+                      <h4>Invoice #INV-2025-0042</h4>
+                      <p class="invoice-date">May 10, 2025</p>
+                      <p class="invoice-service">Annual Physical Examination</p>
+                    </div>
+                    <div class="invoice-amount">
+                      <p class="amount">$245.00</p>
+                      <span class="status unpaid">Unpaid</span>
+                      <button class="btn btn-sm btn-primary">Pay Now</button>
+                    </div>
+                  </div>
+
+                  <div class="invoice-item paid">
+                    <div class="invoice-details">
+                      <h4>Invoice #INV-2025-0036</h4>
+                      <p class="invoice-date">April 15, 2025</p>
+                      <p class="invoice-service">Cardiology Consultation</p>
+                    </div>
+                    <div class="invoice-amount">
+                      <p class="amount">$150.00</p>
+                      <span class="status paid">Paid</span>
+                      <button class="btn btn-sm btn-secondary">
+                        View Receipt
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="invoice-item paid">
+                    <div class="invoice-details">
+                      <h4>Invoice #INV-2025-0028</h4>
+                      <p class="invoice-date">March 22, 2025</p>
+                      <p class="invoice-service">Laboratory Tests</p>
+                    </div>
+                    <div class="invoice-amount">
+                      <p class="amount">$85.00</p>
+                      <span class="status paid">Paid</span>
+                      <button class="btn btn-sm btn-secondary">
+                        View Receipt
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane" id="payment-history">
+                <div class="payment-history-list">
+                  <div class="payment-item">
+                    <div class="payment-details">
+                      <h4>Payment #PAY-2025-0036</h4>
+                      <p class="payment-date">April 15, 2025</p>
+                      <p class="payment-method">Credit Card (ending in 4567)</p>
+                    </div>
+                    <div class="payment-amount">
+                      <p class="amount">$150.00</p>
+                      <button class="btn btn-sm btn-secondary">
+                        View Receipt
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="payment-item">
+                    <div class="payment-details">
+                      <h4>Payment #PAY-2025-0028</h4>
+                      <p class="payment-date">March 22, 2025</p>
+                      <p class="payment-method">Credit Card (ending in 4567)</p>
+                    </div>
+                    <div class="payment-amount">
+                      <p class="amount">$85.00</p>
+                      <button class="btn btn-sm btn-secondary">
+                        View Receipt
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="payment-item">
+                    <div class="payment-details">
+                      <h4>Payment #PAY-2025-0015</h4>
+                      <p class="payment-date">February 8, 2025</p>
+                      <p class="payment-method">Insurance</p>
+                    </div>
+                    <div class="payment-amount">
+                      <p class="amount">$320.00</p>
+                      <button class="btn btn-sm btn-secondary">
+                        View Receipt
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane" id="insurance">
+                <div class="insurance-details">
+                  <div class="insurance-card">
+                    <div class="insurance-logo">
+                      <img
+                        src="/placeholder.svg?height=60&width=120"
+                        alt="BlueCross HealthPlus"
+                      />
+                    </div>
+                    <div class="insurance-info">
+                      <h4>BlueCross HealthPlus</h4>
+                      <p><strong>Member ID:</strong> XXX-XXX-1234</p>
+                      <p><strong>Group Number:</strong> GRP-567890</p>
+                      <p><strong>Plan Type:</strong> PPO</p>
+                      <p><strong>Effective Date:</strong> January 1, 2025</p>
+                    </div>
+                  </div>
+
+                  <div class="coverage-details">
+                    <h4>Coverage Details</h4>
+                    <table class="coverage-table">
+                      <thead>
+                        <tr>
+                          <th>Service Type</th>
+                          <th>In-Network</th>
+                          <th>Out-of-Network</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Primary Care Visit</td>
+                          <td>$25 copay</td>
+                          <td>30% coinsurance</td>
+                        </tr>
+                        <tr>
+                          <td>Specialist Visit</td>
+                          <td>$40 copay</td>
+                          <td>40% coinsurance</td>
+                        </tr>
+                        <tr>
+                          <td>Emergency Room</td>
+                          <td>$250 copay</td>
+                          <td>$250 copay</td>
+                        </tr>
+                        <tr>
+                          <td>Urgent Care</td>
+                          <td>$50 copay</td>
+                          <td>30% coinsurance</td>
+                        </tr>
+                        <tr>
+                          <td>Hospital Stay</td>
+                          <td>$300/day, max $1,500</td>
+                          <td>40% coinsurance</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="payment-methods">
-        <div class="container">
-            <h3>Payment Methods</h3>
-            <div class="payment-options">
-                <div class="payment-option">
-                    <div class="payment-icon">💳</div>
-                    <h4>Credit/Debit Card</h4>
-                    <p>Pay securely with Visa, Mastercard, or American Express</p>
-                </div>
-                <div class="payment-option">
-                    <div class="payment-icon">🏦</div>
-                    <h4>Bank Transfer</h4>
-                    <p>Direct payment from your bank account</p>
-                </div>
-                <div class="payment-option">
-                    <div class="payment-icon">📱</div>
-                    <h4>Mobile Payment</h4>
-                    <p>Use Apple Pay, Google Pay, or other mobile payment options</p>
-                </div>
-                <div class="payment-option">
-                    <div class="payment-icon">📄</div>
-                    <h4>Payment Plan</h4>
-                    <p>Flexible payment options for larger bills</p>
-                </div>
-            </div>
+      <div class="container">
+        <h3>Payment Methods</h3>
+        <div class="payment-options">
+          <div class="payment-option">
+            <div class="payment-icon">💳</div>
+            <h4>Credit/Debit Card</h4>
+            <p>Pay securely with Visa, Mastercard, or American Express</p>
+          </div>
+          <div class="payment-option">
+            <div class="payment-icon">🏦</div>
+            <h4>Bank Transfer</h4>
+            <p>Direct payment from your bank account</p>
+          </div>
+          <div class="payment-option">
+            <div class="payment-icon">📱</div>
+            <h4>Mobile Payment</h4>
+            <p>Use Apple Pay, Google Pay, or other mobile payment options</p>
+          </div>
+          <div class="payment-option">
+            <div class="payment-icon">📄</div>
+            <h4>Payment Plan</h4>
+            <p>Flexible payment options for larger bills</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="billing-faq">
-        <div class="container">
-            <h3>Frequently Asked Questions</h3>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">How do I update my insurance information?</div>
-                    <div class="faq-answer">
-                        <p>You can update your insurance information by logging into your account and navigating to the Insurance section under Billing. If you need assistance, please contact our billing department at (555) 123-4567.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">What if I can't pay my bill in full?</div>
-                    <div class="faq-answer">
-                        <p>We offer flexible payment plans for patients who need assistance. Please contact our billing department to discuss your options and set up a payment plan that works for you.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">How do I dispute a charge on my bill?</div>
-                    <div class="faq-answer">
-                        <p>If you believe there is an error on your bill, please contact our billing department at (555) 123-4567 or email billing@healthcareplus.com. We'll review your account and resolve any discrepancies.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">When will my insurance be billed?</div>
-                    <div class="faq-answer">
-                        <p>We typically submit claims to insurance companies within 2-3 business days after your appointment. Processing times vary by insurance provider, but most claims are processed within 30 days.</p>
-                    </div>
-                </div>
+      <div class="container">
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">
+              How do I update my insurance information?
             </div>
+            <div class="faq-answer">
+              <p>
+                You can update your insurance information by logging into your
+                account and navigating to the Insurance section under Billing.
+                If you need assistance, please contact our billing department at
+                (555) 123-4567.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">What if I can't pay my bill in full?</div>
+            <div class="faq-answer">
+              <p>
+                We offer flexible payment plans for patients who need
+                assistance. Please contact our billing department to discuss
+                your options and set up a payment plan that works for you.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              How do I dispute a charge on my bill?
+            </div>
+            <div class="faq-answer">
+              <p>
+                If you believe there is an error on your bill, please contact
+                our billing department at (555) 123-4567 or email
+                billing@healthcareplus.com. We'll review your account and
+                resolve any discrepancies.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">When will my insurance be billed?</div>
+            <div class="faq-answer">
+              <p>
+                We typically submit claims to insurance companies within 2-3
+                business days after your appointment. Processing times vary by
+                insurance provider, but most claims are processed within 30
+                days.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h2>HealthCare<span>Plus</span></h2>
-                    <p>Your Digital Health Partner</p>
-                </div>
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="appointments.html">Appointments</a></li>
-                        <li><a href="billing.html">Billing</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p>Email: support@healthcareplus.com</p>
-                    <p>Phone: (555) 123-4567</p>
-                    <p>Hours: Mon-Fri, 8am-8pm</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 HealthCare Plus. All rights reserved.</p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h2>HealthCare<span>Plus</span></h2>
+            <p>Your Digital Health Partner</p>
+          </div>
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="appointments.html">Appointments</a></li>
+              <li><a href="billing.html">Billing</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: support@healthcareplus.com</p>
+            <p>Phone: (555) 123-4567</p>
+            <p>Hours: Mon-Fri, 8am-8pm</p>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 HealthCare Plus. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
