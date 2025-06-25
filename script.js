@@ -133,3 +133,21 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 })
+
+// document.querySelector("#signup").addEventListener("submit", function (e) {
+//   e.preventDefault();
+//   const email = document.querySelector("#signup-email").value;
+//   const password = document.querySelector("#signup-password").value;
+//   const confirmPassword = document.querySelector("#confirm-password").value;
+//   const user = JSON.parse(localStorage.getItem("user")) || [];
+//   const existingUser = user.find((u) => u.email === email);
+//   if(existingUser) {
+//     alert("Email already exists");
+//   } else if (password !== confirmPassword) {
+//     alert("Passwords do not match");
+//   } else {
+//     user.push({ email, password }); 
+//     localStorage.setItem("user", JSON.stringify(user));
+//     alert("Sign up successful")};
+// }
+// );
